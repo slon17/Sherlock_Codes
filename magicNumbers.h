@@ -44,7 +44,7 @@ int magicNumbersCounter(char * fileName){
                                                                                                                        continue;
                                                                                                                        }
                                                                                             if(textFile[temporalIndex] != ' '){
-                                                                                                                       if(textFile[temporalIndex] == '=' || textFile[temporalIndex] )
+                                                                                                                       if(textFile[temporalIndex] == '=' /*|| textFile[temporalIndex]*/ )
                                                                                                                                                   isVariable = true;
                                                                                                                        spaceFlag = false;
                                                                                                                        temporalIndex--;
@@ -61,6 +61,6 @@ int magicNumbersCounter(char * fileName){
                                         }
        position++;
        }
-       
+       printf("Magic numbers: %d \n", magicNumbersCounter);
        return magicNumbersCounter;
 }
