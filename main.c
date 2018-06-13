@@ -4,15 +4,21 @@
 #include "variables.h"
 #include "exceptions.h"
 #include "repeated.h"
+#include "magicNumbers.h"
+#include "sherlock.h"
 
 #define MAXCHAR 13000
 int main(int argc, char *argv[])
 {
-       char * files[] = {"tombola.java", "end"};
+       /*char * files[] = {"tombola.java", "end"};
        //fileCounter(files);
        variableCounter("tombola.java");
+       magicNumbersCounter("tombola.java");
        exceptionsCounter("tombola.java");
-       repetitionsCounter(files);
+       repetitionsCounter(files);*/
+       
+       int clues[] = {5,3,6,8};
+       sherlockGenetic(clues);
        system("PAUSE");
     
 }

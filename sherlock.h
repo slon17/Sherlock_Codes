@@ -81,8 +81,9 @@ sherlockGenetic(int clues[]){
                                    exceptionAverage = exceptionChildrenTotal/exceptionChildrenQuantity;
                                    repetitionAverage = repetitionChildrenTotal/repetitionChildrenQuantity;
                                    
-                                   if(varAverage < (MAXVAR*33.33/100))
+                                   if(varAverage < (MAXVAR*33.33/100)){
                                                  varValue = 0; //minimun end
+                                                 printf("var value 0");}
                                    else if(varAverage >= (MAXVAR*33.33/100) && varAverage < (MAXVAR*33.33/100)*2)
                                                  varValue = 1; //average
                                    else
@@ -108,9 +109,98 @@ sherlockGenetic(int clues[]){
                                                              repetitionValue = 1;
                                    else
                                        repetitionValue = 3;
-                                   }
                                    
                                    //******//
+                                   int temporalParentsIndex = 0;
+                                   int popIndex;
+                                   printf("varValue: %d, magicValue: %d, repeatitionValue: %d \n", varValue, magicValue, repetitionValue);
+                                   for(popIndex = 0; popIndex<popCounter; popIndex++){
+                                                if(population[popIndex]<MAXVAR){
+                                                                                if(varValue == 0){
+                                                                                            if(population[popIndex]<(MAXVAR*33.33/100)){
+                                                                                                                                        //printf("varvalue0"); 
+                                                                                                                                       population[temporalParentsIndex] = population[popIndex];
+                                                                                                                                       temporalParentsIndex++;
+                                                                                            }
+                                                                                }
+                                                                                else if(varValue == 1){
+                                                                                     if(population[popIndex]>=(MAXVAR*33.33/100) && population[popIndex] < (MAXVAR*33.33/100)*2){//printf("varvalue1");
+                                                                                                                                 population[temporalParentsIndex] = population[popIndex];
+                                                                                                                                 temporalParentsIndex++;
+                                                                                     }
+                                                                                }
+                                                                                else
+                                                                                    if(population[popIndex]>=(MAXVAR*33.33/100)*2){//printf("varvalue2");
+                                                                                                                                  population[temporalParentsIndex] = population[popIndex];
+                                                                                                                                  temporalParentsIndex++;
+                                                                                    }
+                                                                                }
+                                                else if(population[popIndex]<MAXMAGIC){
+                                                                                       if(magicValue == 0){
+                                                                                            if(population[popIndex]<(MAXMAGIC*33.33/100)){
+                                                                                                                                       population[temporalParentsIndex] = population[popIndex];
+                                                                                                                                       temporalParentsIndex++;
+                                                                                            }
+                                                                                            }
+                                                                                       else if(magicValue == 1){
+                                                                                            if(population[popIndex]>=(MAXMAGIC*33.33/100) && population[popIndex] < (MAXMAGIC*33.33/100)*2){
+                                                                                                                                          population[temporalParentsIndex] = population[popIndex];
+                                                                                                                                          temporalParentsIndex++;
+                                                                                                                                          }
+                                                                                            }
+                                                                                       else
+                                                                                           if(population[popIndex]>=(MAXMAGIC*33.33/100)*2){
+                                                                                                                                           population[temporalParentsIndex] = population[popIndex];
+                                                                                                                                           temporalParentsIndex++;
+                                                                                           }
+                                                                                       }
+                                                else if(population[popIndex]<MAXEXCEP){
+                                                                                       if(exceptionValue == 0){
+                                                                                            if(population[popIndex]<(MAXEXCEP*33.33/100)){
+                                                                                                                                       population[temporalParentsIndex] = population[popIndex];
+                                                                                                                                       temporalParentsIndex++;
+                                                                                            }
+                                                                                       }
+                                                                                       else if(exceptionValue == 1){
+                                                                                            if(population[popIndex]>=(MAXEXCEP*33.33/100) && population[popIndex] < (MAXEXCEP*33.33/100)*2){
+                                                                                                                                          population[temporalParentsIndex] = population[popIndex];
+                                                                                                                                          temporalParentsIndex++;
+                                                                                            }
+                                                                                       }
+                                                                                       else
+                                                                                           if(population[popIndex]>=(MAXEXCEP*33.33/100)*2){
+                                                                                                                                           population[temporalParentsIndex] = population[popIndex];
+                                                                                                                                           temporalParentsIndex++;
+                                                                                           }                                                                                     
+                                                                                       }
+                                                else{
+                                                     if(exceptionValue == 0){
+                                                                       if(population[popIndex]<(MAXEXCEP*33.33/100)){
+                                                                                                                    population[temporalParentsIndex] = population[popIndex];
+                                                                                                                    temporalParentsIndex++;
+                                                                       }
+                                                     }
+                                                     else if(exceptionValue == 1){
+                                                                            if(population[popIndex]>=(MAXEXCEP*33.33/100) && population[popIndex] < (MAXEXCEP*33.33/100)*2){
+                                                                                                                          population[temporalParentsIndex] = population[popIndex];
+                                                                                                                          temporalParentsIndex++;
+                                                                            }
+                                                     }
+                                                     else
+                                                         if(population[popIndex]>=(MAXEXCEP*33.33/100)*2){
+                                                                                                         population[temporalParentsIndex] = population[popIndex];
+                                                                                                         temporalParentsIndex++;
+                                                         }
+                                                     }
+                                                printf("genotipo: %d %d \n", population[popIndex], popIndex);
+                                                }
+                                                popCounter = temporalParentsIndex;
+                                                //printf("generacion %d \n", generation);
+                                                
+                                                //****//
+                                                
+                                   
+                                   }
                                    
 
                     
