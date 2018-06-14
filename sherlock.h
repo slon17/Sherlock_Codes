@@ -36,14 +36,18 @@ int binaryToInt(int bNumber[]){
     return result;
 }
 
-sherlockData(char * files[]){
-                  //variableCounter(files);
-                  //magicNumbersCounter(files);
-                  //exceptionsCounter(files);
-                  repetitionsCounter(files);
+void sherlockData(char * files[], int clues[]){
+                  int position = 0;
+                  while(files[position] != "end"){
+                                        clues[0] = variableCounter(files[position]);
+                                        clues[1] =magicNumbersCounter(files[position]);
+                                        clues[2] =exceptionsCounter(files[position]);
+                  position++;
+                  }
+                  clues[3] = repetitionsCounter(files);
 }
 
-sherlockGenetic(int clues[]){
+void sherlockGenetic(int clues[]){
                     time_t t;
                     srand((unsigned) time(&t));
                     
@@ -230,7 +234,7 @@ sherlockGenetic(int clues[]){
                                                 int counter;
                                                 for(counter = 0; counter<temporalParentsIndex; counter++){
                                                             if(counter+1 == temporalParentsIndex && counter%2 != 0){
-                                                                       printf("asd");
+                                                                       printf("");
                                                                        }
                                                             else{
                                                                  int binaryA[16];

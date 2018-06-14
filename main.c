@@ -10,14 +10,15 @@
 #define MAXCHAR 13000
 int main(int argc, char *argv[])
 {
-       /*char * files[] = {"tombola.java", "end"};
+       char * files[] = {"tombola.java", "end"};
        //fileCounter(files);
-       variableCounter("tombola.java");
+       /*variableCounter("tombola.java");
        magicNumbersCounter("tombola.java");
        exceptionsCounter("tombola.java");
        repetitionsCounter(files);*/
        
-       int clues[] = {5,3,6,8};
+       int clues[4];
+       sherlockData(files, clues);
        sherlockGenetic(clues);
        system("PAUSE");
     
