@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "variables.h"
+/*#include "variables.h"
 #include "exceptions.h"
 #include "repeated.h"
-#include "magicNumbers.h"
+#include "magicNumbers.h"*/
 #include "sherlock.h"
 
 #define MAXCHAR 13000
